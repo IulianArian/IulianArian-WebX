@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IulianArian Website</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Arial", sans-serif;
+            background-color: #C0C0C0;
+            text-align: center;
+            color: #000080;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+        .content {
+            border: 3px solid #000080;
+            background-color: #FFFFFF;
+            padding: 20px;
+        }
+        .link {
+            color: #FF0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .clock {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="content">
+                <p>This is the original IulianArian Website, but on Bussin!</p>
+                <p><a class="link" href="http://iulianarian.blogspot.com" target="_blank">Check out the real deal!</a></p>
+                <div class="clock" id="clock"></div>
+            </td>
+        </tr>
+    </table>
 
+    <script>
+        function updateClock() {
+            const options = { timeZone: 'Europe/Bucharest', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formatter = new Intl.DateTimeFormat([], options);
+            const timeString = formatter.format(new Date());
+            document.getElementById('clock').textContent = `Current Time in Bucharest: ${timeString}`;
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
